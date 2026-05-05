@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Launch (lldb)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/main", // Путь к готовому файлу из tasks.json
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb", // Для Mac используем lldb
+            "preLaunchTask": "C/C++: clang++ сборка активного файла", // Имя должно совпадать с label в tasks.json
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
